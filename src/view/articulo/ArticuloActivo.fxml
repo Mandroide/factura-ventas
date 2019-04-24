@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="535.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.articulo.ArticuloActivoController">
+    <TitledPane animated="false" layoutX="246.0" layoutY="6.0" prefHeight="206.0" prefWidth="485.0" text="Cliente">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="552.0">
+            <HBox layoutX="25.0" layoutY="14.0" prefHeight="35.0" prefWidth="250.0">
+                <Label prefHeight="20.0" prefWidth="44.0" text="No.:  ">
+                    <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label fx:id="id_" prefHeight="20.0" prefWidth="202.0" text="NULL">
+                    <font>
+                        <Font name="SansSerif Italic" size="16.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox layoutY="62.0" prefHeight="35.0" prefWidth="353.0">
+                <Label prefHeight="20.0" prefWidth="95.0" text="Nombre: ">
+                    <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label fx:id="nombre_" prefHeight="20.0" prefWidth="283.0" text="NULL">
+                    <font>
+                        <Font name="SansSerif Italic" size="16.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox layoutY="115.0" prefHeight="35.0" prefWidth="275.0">
+                <Label prefHeight="20.0" prefWidth="116.0" text="Email:  ">
+                    <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label fx:id="email_" prefHeight="20.0" prefWidth="220.0" text="NULL">
+                    <font>
+                        <Font name="SansSerif Italic" size="16.0" />
+                    </font>
+                </Label>
+            </HBox>
+        </AnchorPane>
+    </TitledPane>
+    <TableView fx:id="tableView" layoutX="236.0" layoutY="240.0" onMouseClicked="#seleccionar" prefHeight="200.0" prefWidth="941.0">
+        <columns>
+            <TableColumn fx:id="columnaNo" prefWidth="58.0" text="No." />
+            <TableColumn fx:id="columnaCodigo" prefWidth="158.0" text="Codigo" />
+            <TableColumn fx:id="columnaNombre" prefWidth="202.0" text="Nombre" />
+            <TableColumn fx:id="columnaDescripcion" prefWidth="256.0" sortable="false" text="Descripcion" />
+            <TableColumn fx:id="columnaUnidadesStock" prefWidth="140.0" text="Unidades en Stock" />
+            <TableColumn fx:id="columnaPrecio" prefWidth="125.0" text="Precio" />
+        </columns>
+    </TableView>
+    <ButtonBar layoutX="760.0" layoutY="454.0" prefHeight="40.0" prefWidth="227.0">
+        <buttons>
+         <JFXButton buttonType="RAISED" cancelButton="true" onAction="#volver" style="-fx-background-color: #FFFFFF; -fx-border-color: black; -fx-border-radius: 5;" text="Volver">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+         </JFXButton>
+         <JFXButton fx:id="botonContinuar" disable="true" onAction="#continuar" style="-fx-background-color: #FFFFFF; -fx-border-color: black; -fx-border-radius: 5;" text="Continuar">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+         </JFXButton>
+        </buttons>
+    </ButtonBar>
+    <Label layoutX="760.0" layoutY="51.0" text="Cantidad deseada: " />
+    <ButtonBar layoutX="860.0" layoutY="108.0" prefHeight="40.0" prefWidth="276.0">
+        <buttons>
+         <JFXButton fx:id="botonAgregar" defaultButton="true" disable="true" onAction="#agregar" prefHeight="39.0" prefWidth="123.0" style="-fx-background-color: lightgreen;" text="Agregar">
+            <graphic>
+                    <ImageView fitHeight="31.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../resources/agregarCarrito.png" />
+                    </ImageView>
+            </graphic>
+            <tooltip>
+                    <Tooltip text="Agregar al carrito de compras" />
+            </tooltip>
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </JFXButton>
+         <JFXButton fx:id="botonRemover" disable="true" onAction="#remover" prefHeight="39.0" prefWidth="123.0" style="-fx-background-color: red;" text="Remover" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+            <tooltip>
+                    <Tooltip text="Remover del carrito de compras" />
+            </tooltip>
+            <graphic>
+                    <ImageView fitHeight="29.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../resources/removerCarrito.png" />
+                    </ImageView>
+            </graphic>
+         </JFXButton>
+        </buttons>
+    </ButtonBar>
+   <JFXTextField fx:id="cantidad" layoutX="867.0" layoutY="47.0" prefWidth="75.0" style="-fx-background-color: white;" />
+   <JFXTreeView fx:id="treeView" layoutX="17.0" layoutY="22.0" prefHeight="170.0" prefWidth="190.0" showRoot="false" />
+</AnchorPane>

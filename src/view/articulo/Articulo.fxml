@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane minHeight="535.0" minWidth="1303.0" prefHeight="535.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.articulo.ArticuloController">
+   <ButtonBar layoutX="609.0" layoutY="123.0" prefHeight="55.0" prefWidth="281.0">
+      <buttons>
+         <JFXButton buttonType="RAISED" defaultButton="true" onAction="#agregar" prefHeight="57.0" prefWidth="182.0" style="-fx-background-color: lightgreen;" text="Agregar" textAlignment="CENTER" textFill="WHITE">
+            <graphic>
+                <ImageView fitHeight="47.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../resources/botonAgregar.png" />
+                </ImageView>
+            </graphic>
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </JFXButton>
+      </buttons>
+   </ButtonBar>
+   <JFXTextField fx:id="codigo" labelFloat="true" layoutX="238.0" layoutY="29.0" prefHeight="25.0" prefWidth="168.0" promptText="Código" style="-fx-background-color: white;" />
+   <JFXTextField fx:id="nombre" labelFloat="true" layoutX="238.0" layoutY="73.0" onKeyPressed="#buscar" prefHeight="25.0" prefWidth="168.0" promptText="Nombre" style="-fx-background-color: WHITE;" />
+   <JFXTextArea fx:id="descripcion" labelFloat="true" layoutX="238.0" layoutY="123.0" prefHeight="113.0" prefWidth="244.0" promptText="Descripción" style="-fx-background-color: white;" />
+   <JFXTextField fx:id="unidadesStock" labelFloat="true" layoutX="522.0" layoutY="20.0" prefWidth="149.0" promptText="Unidades en stock" style="-fx-background-color: white;" />
+   <JFXTextField fx:id="precio" labelFloat="true" layoutX="522.0" layoutY="73.0" prefHeight="25.0" prefWidth="173.0" promptText="Precio" style="-fx-background-color: white;" />
+    <TableView fx:id="tableView" editable="true" layoutX="194.0" layoutY="272.0" prefHeight="200.0" prefWidth="1152.0">
+        <columns>
+            <TableColumn fx:id="columnaNo" prefWidth="54.000030517578125" resizable="false" text="No." />
+            <TableColumn fx:id="columnaCodigo" minWidth="144.0" onEditCommit="#actualizar" prefWidth="179.0" resizable="false" text="Codigo" />
+            <TableColumn fx:id="columnaNombre" onEditCommit="#actualizar" prefWidth="219.0" resizable="false" text="Nombre" />
+            <TableColumn fx:id="columnaDescripcion" onEditCommit="#actualizar" prefWidth="317.0" resizable="false" sortable="false" text="Descripcion" />
+            <TableColumn fx:id="columnaUnidadesStock" onEditCommit="#actualizar" prefWidth="127.0" resizable="false" text="Cantidades en Stock" />
+            <TableColumn fx:id="columnaPrecio" onEditCommit="#actualizar" prefWidth="102.0" resizable="false" text="Precio" />
+            <TableColumn fx:id="columnaEstatus" onEditCommit="#actualizar" prefWidth="152.0" resizable="false" text="Estatus" />
+        </columns>
+    </TableView>
+    <ImageView fitHeight="196.0" fitWidth="246.0" layoutX="995.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../resources/articulosTabla.png" />
+    </ImageView>
+   <JFXTreeView fx:id="treeView" layoutX="17.0" layoutY="22.0" prefHeight="170.0" prefWidth="190.0" showRoot="false" />
+</AnchorPane>

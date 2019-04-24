@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="535.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.factura.FacturaController">
+    <HBox layoutX="227.0" layoutY="33.0" prefHeight="48.0" prefWidth="237.0">
+        <Label prefHeight="26.0" prefWidth="54.0" text="Orden #:  " />
+      <JFXTextField fx:id="numero" disable="true" prefWidth="142.0" style="-fx-background-color: white;" />
+        <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../resources/buscarTexto.png" />
+        </ImageView>
+    </HBox>
+    <TableView fx:id="tableView" layoutX="212.0" layoutY="230.0" prefHeight="200.0" prefWidth="1056.0">
+        <columns>
+            <TableColumn fx:id="columnaClienteNo" prefWidth="58.00001525878906" text="No." />
+            <TableColumn fx:id="columnaClienteNombre" prefWidth="141.0" text="Nombre" />
+            <TableColumn fx:id="columnaNo" prefWidth="113.0" text="# Orden" />
+            <TableColumn fx:id="columnaFecha" prefWidth="91.0" text="Fecha" />
+            <TableColumn fx:id="columnaHora" prefWidth="92.0" text="Hora" />
+            <TableColumn fx:id="columnaTotalBruto" prefWidth="115.0" text="Total Bruto" />
+            <TableColumn fx:id="columnaTotalImpuesto" prefWidth="108.0" text="Total Impuesto" />
+            <TableColumn fx:id="columnaTotalCargo" prefWidth="99.0" text="Total Cargo" />
+            <TableColumn fx:id="columnaTotalDescuento" prefWidth="114.0" text="Total Descuento" />
+            <TableColumn fx:id="columnaTotalNeto" prefWidth="123.0" text="Total Neto" />
+        </columns>
+    </TableView>
+    <ImageView fitHeight="193.0" fitWidth="331.0" layoutX="739.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../resources/facturasTabla.png" />
+    </ImageView>
+   <JFXButton fx:id="botonVerDetalles" defaultButton="true" disable="true" layoutX="475.0" layoutY="27.0" onAction="#verDetalles" style="-fx-background-color: teal;" text="Ver detalles">
+      <font>
+         <Font name="System Bold" size="16.0" />
+      </font>
+   </JFXButton>
+   <JFXTreeView fx:id="treeView" layoutX="17.0" layoutY="22.0" prefHeight="170.0" prefWidth="190.0" showRoot="false" />
+</AnchorPane>

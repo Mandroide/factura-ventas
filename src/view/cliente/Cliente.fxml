@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="535.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.cliente.ClienteController">
+   <JFXTextField fx:id="nombre" labelFloat="true" layoutX="235.0" layoutY="28.0" onKeyTyped="#buscar" prefHeight="25.0" prefWidth="209.0" promptText="Nombre" style="-fx-background-color: white;" />
+   <JFXTextField fx:id="email" labelFloat="true" layoutX="235.0" layoutY="69.0" prefHeight="25.0" prefWidth="244.0" promptText="Email" style="-fx-background-color: white;" />
+   <JFXTextField fx:id="telefono" labelFloat="true" layoutX="235.0" layoutY="115.0" prefHeight="25.0" prefWidth="149.0" promptText="Telefono" style="-fx-background-color: white;" />
+   <JFXTextField fx:id="direccion" labelFloat="true" layoutX="235.0" layoutY="166.0" prefHeight="25.0" prefWidth="244.0" promptText="Dirección" style="-fx-background-color: white;" />
+   <JFXComboBox fx:id="paises" labelFloat="true" layoutX="506.0" layoutY="41.0" prefHeight="25.0" prefWidth="253.0" promptText="Selecciona pais" style="-fx-background-color: white;" />
+   <JFXTextField fx:id="ciudad" labelFloat="true" layoutX="506.0" layoutY="140.0" prefHeight="25.0" prefWidth="170.0" promptText="Ciudad" style="-fx-background-color: white;" />
+   <JFXTextField fx:id="codigoPostal" labelFloat="true" layoutX="506.0" layoutY="88.0" prefHeight="25.0" prefWidth="124.0" promptText="Código Postal" style="-fx-background-color: white;" />
+    <TableView fx:id="tableView" editable="true" layoutX="148.0" layoutY="204.0" prefHeight="303.0" prefWidth="1202.0">
+        <columns>
+            <TableColumn fx:id="columnaNo" editable="false" maxWidth="80.0" minWidth="70.0" prefWidth="75.0" text="No." />
+            <TableColumn fx:id="columnaNombre" maxWidth="300.0" minWidth="75.0" onEditCommit="#actualizar" prefWidth="150.0" resizable="false" text="Nombre" />
+            <TableColumn fx:id="columnaEmail" onEditCommit="#actualizar" prefWidth="150.66668701171875" resizable="false" text="Email" />
+            <TableColumn fx:id="columnaTelefono" onEditCommit="#actualizar" prefWidth="123.0" resizable="false" text="Telefono" />
+            <TableColumn fx:id="columnaDireccion" minWidth="100.0" onEditCommit="#actualizar" prefWidth="128.0" resizable="false" sortable="false" text="Direccion" />
+            <TableColumn fx:id="columnaCodigoPostal" onEditCommit="#actualizar" prefWidth="108.33331298828125" resizable="false" text="Codigo Postal" />
+            <TableColumn fx:id="columnaCiudad" maxWidth="1.7976931348623157E308" minWidth="100.0" onEditCommit="#actualizar" prefWidth="86.0" resizable="false" text="Ciudad" />
+            <TableColumn fx:id="columnaPais" minWidth="125.0" onEditCommit="#actualizar" prefWidth="207.6666259765625" resizable="false" text="Pais" />
+            <TableColumn fx:id="columnaEstatus" maxWidth="205.33331298828125" minWidth="41.0" onEditCommit="#actualizar" prefWidth="157.0" resizable="false" text="Estatus" />
+        </columns>
+    </TableView>
+    <ImageView fitHeight="170.0" fitWidth="178.0" layoutX="1053.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../resources/clientesTabla.png" />
+    </ImageView>
+    <ButtonBar layoutX="816.0" layoutY="79.0" prefHeight="68.0" prefWidth="190.0">
+        <buttons>
+         <JFXButton buttonType="RAISED" defaultButton="true" onAction="#agregar" prefHeight="57.0" prefWidth="182.0" style="-fx-background-color: lightgreen;" text="Agregar" textAlignment="CENTER" textFill="WHITE">
+            <graphic>
+                    <ImageView fitHeight="47.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../resources/botonAgregar.png" />
+                    </ImageView>
+            </graphic>
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </JFXButton>
+        </buttons>
+    </ButtonBar>
+   <JFXTreeView fx:id="treeView" layoutX="17.0" layoutY="22.0" prefHeight="170.0" prefWidth="190.0" showRoot="false" />
+</AnchorPane>

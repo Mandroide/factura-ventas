@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="602.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.factura.FacturaDetallesController">
+    <TableView fx:id="tableView" layoutY="192.0" prefHeight="184.0" prefWidth="858.0">
+        <columns>
+            <TableColumn fx:id="columnaNo" prefWidth="49.0" text="No." />
+            <TableColumn fx:id="columnaCodigo" prefWidth="98.0" text="Codigo" />
+            <TableColumn fx:id="columnaNombre" prefWidth="103.0" text="Nombre" />
+            <TableColumn fx:id="columnaDescripcion" prefWidth="140.0" sortable="false" text="Descripcion" />
+            <TableColumn fx:id="columnaCantidad" prefWidth="61.0" text="Cantidad" />
+            <TableColumn fx:id="columnaPrecio" prefWidth="104.0" text="Precio" />
+            <TableColumn fx:id="columnaDescuento" prefWidth="105.0" text="Descuento" />
+            <TableColumn fx:id="columnaImpuesto" minWidth="0.0" prefWidth="95.0" text="Impuesto" />
+            <TableColumn fx:id="columnaNeto" prefWidth="87.0" text="Neto" />
+        </columns>
+    </TableView>
+    <TitledPane animated="false" collapsible="false" layoutX="41.0" layoutY="23.0" prefHeight="139.0" prefWidth="307.0" text="Cliente">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="113.0" prefWidth="356.0">
+            <HBox layoutX="39.0" layoutY="11.0" prefHeight="33.0" prefWidth="188.0">
+                <Label text="No. : " />
+                <Label fx:id="id" text="87" />
+            </HBox>
+            <HBox layoutX="27.0" layoutY="40.0" prefHeight="33.0" prefWidth="200.0">
+                <Label prefHeight="17.0" prefWidth="60.0" text="Nombre: " />
+                <Label fx:id="nombre" text="Microsoft" />
+            </HBox>
+        </AnchorPane>
+    </TitledPane>
+    <Separator layoutX="604.0" layoutY="528.0" prefHeight="3.0" prefWidth="246.0" />
+    <VBox layoutX="608.0" layoutY="397.0" prefHeight="191.0" prefWidth="292.0">
+        <HBox prefHeight="33.0" prefWidth="196.0">
+            <Label prefHeight="33.0" prefWidth="131.0" text="Total Bruto: ">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Label>
+            <Label prefHeight="33.0" prefWidth="24.0" text="RD$">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Label>
+            <Label fx:id="totalBruto" prefHeight="34.0" text="10,000.00">
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Label>
+        </HBox>
+        <HBox prefHeight="33.0" prefWidth="518.0">
+            <Label prefHeight="33.0" prefWidth="133.0" text="Total de Descuento: ">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Label>
+            <Label prefHeight="33.0" prefWidth="28.0" text="RD$">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Label>
+            <Label fx:id="totalDescuento" prefHeight="33.0" text="300.00">
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Label>
+        </HBox>
+        <HBox prefHeight="35.0" prefWidth="518.0">
+            <Label prefHeight="35.0" prefWidth="138.0" text="Total de Impuesto: ">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Label>
+            <Label prefHeight="33.0" prefWidth="31.0" text="RD$">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Label>
+            <Label fx:id="totalImpuesto" prefHeight="40.0" text="200.00">
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Label>
+        </HBox>
+        <HBox prefHeight="33.0" prefWidth="518.0">
+            <Label prefHeight="32.0" prefWidth="142.0" text="Total de Cargo: ">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Label>
+            <Label prefHeight="33.0" prefWidth="27.0" text="RD$">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Label>
+            <Label fx:id="totalCargo" prefHeight="34.0" text="794.00">
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Label>
+        </HBox>
+        <HBox prefHeight="37.0" prefWidth="550.0">
+            <Label prefHeight="37.0" prefWidth="144.0" text="Total Neto: ">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="30.0" text="RD$">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Label>
+            <Label fx:id="totalNeto" prefHeight="37.0" text="90,000.00" underline="true">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+        </HBox>
+    </VBox>
+    <HBox layoutX="408.0" layoutY="70.0" prefHeight="46.0" prefWidth="125.0">
+        <Label prefHeight="46.0" prefWidth="48.0" text="Fecha: " />
+        <Label fx:id="fecha" prefHeight="46.0" prefWidth="74.0" text="12/2/2017" />
+    </HBox>
+    <HBox layoutX="408.0" layoutY="124.0" prefHeight="46.0" prefWidth="185.0">
+        <Label prefHeight="46.0" prefWidth="48.0" text="Hora: " />
+        <Label fx:id="hora" prefHeight="46.0" prefWidth="74.0" text="4:00 p.m." />
+    </HBox>
+    <HBox layoutX="408.0" layoutY="41.0" prefHeight="32.0" prefWidth="152.0">
+        <Label prefHeight="22.0" prefWidth="58.0" text="Numero: " />
+        <Label fx:id="numero" prefHeight="24.0" prefWidth="39.0" text="798434" />
+    </HBox>
+   <JFXButton buttonType="RAISED" layoutX="576.0" layoutY="75.0" onAction="#cancelarOrden" style="-fx-background-color: #D83535;" text="Cancelar Orden" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="16.0" />
+      </font>
+      <graphic>
+          <ImageView fitHeight="58.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+              <Image url="@../resources/botonEliminar.png" />
+          </ImageView>
+      </graphic>
+   </JFXButton>
+</AnchorPane>
